@@ -1,0 +1,11 @@
+<body>
+    <div class="container">
+
+        <qrcode [qrdata]="DatosQR" [width]="300" [errorCorrectionLevel]="'M'"></qrcode>
+        <div>
+          <p> Datos Recibidos: </p>
+          <input type="text" [(ngModel)]="DatosQR">
+        </div>
+      </div>
+  </body>
+

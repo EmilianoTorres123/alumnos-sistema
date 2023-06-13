@@ -1,0 +1,23 @@
+<body>
+  <Main id="Contenedor" *ngIf="loggedIn">
+    <Article id="Navegacion">
+      <app-header></app-header>
+    </Article>
+    <article id="Informacion_Docente">
+      <app-perfil> </app-perfil>
+    </article>
+    <article id="Pantalla_Informacion">
+      <router-outlet></router-outlet>
+    </article>
+  </Main>
+
+  <div *ngIf="!loggedIn" id="ContenedorLogin">
+    <section id="Registro" *ngIf="formulario === 'registro' || formulario == '' ">
+      <app-registro (iniciarSesion)="mostrarIniciarSesion()"></app-registro>
+    </section>
+
+    <section id="Login" *ngIf="formulario === 'login'">
+      <app-login (registrarse)="mostrarRegistro()"></app-login>
+    </section>
+  </div>
+</body>
